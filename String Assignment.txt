@@ -1,0 +1,99 @@
+﻿1. What is the Mutable String in Java Explain with the example?      
+Ans:
+
+
+In Java, the StringBuilder and StringBuffer classes provide mutable sequences of characters. Unlike immutable strings, you can modify the content of these classes. Among them, StringBuilder is more commonly used in single-threaded environments due to its better performance.
+Example
+
+
+public class MutableStringExample {
+    public static void main(String[] args) {
+        StringBuilder mutableString = new StringBuilder("Hello");
+        
+        // Append to the string
+        mutableString.append(" World");
+        
+        // Modify the string
+        mutableString.replace(0, 5, "Hi");
+        
+        System.out.println("Mutable String: " + mutableString);
+    }
+}
+
+
+
+
+2.WAP to reverse a String   Input : "PWSKILLS"   Output: "SLLIKSWP".     
+
+
+Ans:
+ Program to Reverse a String:
+
+
+public class ReverseStringExample {
+    public static void main(String[] args) {
+        String input = "PWSKILLS";
+        
+        // Using StringBuilder to reverse the string
+        StringBuilder reversed = new StringBuilder(input).reverse();
+        
+        System.out.println("Reversed String: " + reversed);
+    }
+}
+
+
+3.WAP to reverse a sentence while preserving the position        
+  Input : Think Twice      
+  Output :"Kniht eciwt"
+Ans:
+
+
+Program to Reverse a Sentence While Preserving Position:
+
+
+public class ReverseSentenceExample {
+    public static void main(String[] args) {
+        String inputSentence = "Think Twice";
+        
+        // Split the sentence into words
+        String[] words = inputSentence.split(" ");
+        
+        // Reverse each word and rebuild the sentence
+        StringBuilder reversedSentence = new StringBuilder();
+        for (String word : words) {
+            reversedSentence.append(new StringBuilder(word).reverse()).append(" ");
+        }
+        
+        System.out.println("Reversed Sentence: " + reversedSentence.toString().trim());
+    }
+}
+
+
+
+
+4.WAP to a sort a String  Alphabetically 
+
+
+Ans:
+ Program to Sort a String Alphabetically:
+
+
+import java.util.Arrays;
+
+
+public class SortStringAlphabetically {
+    public static void main(String[] args) {
+        String inputString = "PWSKILLS";
+        
+        // Convert the string to a character array
+        char[] charArray = inputString.toCharArray();
+        
+        // Sort the character array
+        Arrays.sort(charArray);
+        
+        // Create a new string from the sorted character array
+        String sortedString = new String(charArray);
+        
+        System.out.println("Sorted String Alphabetically: " + sortedString);
+    }
+}
